@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Fornecimento de Água</title>
     <style>
+        /* Mantendo o mesmo estilo do exemplo anterior */
         body {
             font-family: Arial, sans-serif;
             background-color: #e9f7ef;
@@ -100,22 +101,46 @@
             }
         }
     </style>
+    <script>
+        // Função para capturar o valor de um cookie
+        function getCookie(name) {
+            let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            if (match) return match[2];
+            return null;
+        }
+
+        // Função para inserir o valor do cookie 'username' no formulário
+        function addUserToForm() {
+            const username = getCookie('username'); // Obtém o valor do cookie 'username'
+            if (username) {
+                // Cria um campo oculto com o valor do cookie 'username'
+                let hiddenInput = document.createElement('input');
+                hiddenInput.type = 'hidden';
+                hiddenInput.name = 'username';
+                hiddenInput.value = username;
+                document.querySelector('form').appendChild(hiddenInput);
+            }
+        }
+
+        // Chamar a função ao carregar a página
+        window.onload = addUserToForm;
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>Registro de Fornecimento de Água</h1>
         <form action="https://formspree.io/f/xovazjvq" method="POST">
-            <label for="destino">Destino da água (ex: CADM, Sala dos Professores, Secretaria da Direção, Guarita etc.):</label>
+            <label for="destino">Destino da água (ex: Guarita, Brinquedoteca, CADM etc.):</label>
             <input type="text" id="destino" name="destino" required>
 
-            <label for="observacoes">Observações:Restam 5 galões cheios e 2 vazios.</label>
+            <label for="observacoes">Observações Exemplo:11 cheios e 2 vazios</label>
             <textarea id="observacoes" name="observacoes" placeholder="Informe quaisquer detalhes relevantes" required></textarea>
 
             <input type="submit" value="Enviar">
         </form>
 
         <div class="footer">
-            &copy; 2024 Registro de Fornecimento de Água - Mateus.Campos@unir.br
+            &copy; 2024 Registro de Fornecimento de Água Mateus.Campos@unir.br
         </div>
     </div>
 </body>
