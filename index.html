@@ -4,17 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Fornecimento de Água</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9f7ef;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        h1 {
+            color: #128c7e;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #128c7e;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #333;
+            background-color: #f1f1f1;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            border-color: #25d366;
+            outline: none;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        input[type="submit"] {
+            background-color: #25d366;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #128c7e;
+        }
+
+        input[type="submit"]:active {
+            background-color: #075e54;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Registro de Fornecimento de Água</h1>
-    <form action="https://formspree.io/f/xovazjvq" method="POST">
-        <label for="destino">Destino da água (ex: Setor A, Setor B, etc.):</label><br>
-        <input type="text" id="destino" name="destino" required><br><br>
+    <div class="container">
+        <h1>Registro de Fornecimento de Água</h1>
+        <form action="https://formspree.io/f/xovazjvq" method="POST">
+            <label for="destino">Destino da água (ex: Setor A, Setor B, etc.):</label>
+            <input type="text" id="destino" name="destino" required>
 
-        <label for="observacoes">Observações:</label><br>
-        <textarea id="observacoes" name="observacoes" placeholder="Informe quaisquer detalhes relevantes" required></textarea><br><br>
+            <label for="observacoes">Observações:</label>
+            <textarea id="observacoes" name="observacoes" placeholder="Informe quaisquer detalhes relevantes" required></textarea>
 
-        <input type="submit" value="Enviar">
-    </form>
+            <input type="submit" value="Enviar">
+        </form>
+
+        <div class="footer">
+            &copy; 2024 Registro de Fornecimento de Água
+        </div>
+    </div>
 </body>
 </html>
